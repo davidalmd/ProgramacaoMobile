@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,26 +16,28 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => PrimeiraTela(),
-        '/tela2': (context) => SegundaTela(),
+        '/': (context) => const PrimeiraTela(),
+        '/tela2': (context) => const SegundaTela(),
       },
     );
   }
 }
 
 class PrimeiraTela extends StatelessWidget {
+  const PrimeiraTela({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Primeira Tela'),
+        title: const Text('Primeira Tela'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             Navigator.pushNamed(context, '/tela2');
           },
-          child: Text('Ir para Segunda Tela'),
+          child: const Text('Ir para Segunda Tela'),
         ),
       ),
     );
@@ -41,11 +45,13 @@ class PrimeiraTela extends StatelessWidget {
 }
 
 class SegundaTela extends StatelessWidget {
+  const SegundaTela({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Segunda Tela'),
+        title: const Text('Segunda Tela'),
       ),
       body: Center(
           child: Column(
@@ -59,7 +65,7 @@ class SegundaTela extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text('Voltar para Primeira Tela'),
+            child: const Text('Voltar para Primeira Tela'),
           ),
         ],
       )),
